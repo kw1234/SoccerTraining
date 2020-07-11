@@ -1,0 +1,26 @@
+<br>
+<input>
+<input>
+<input>
+
+<br>
+
+<mat-card>
+  <mat-form-field appearance="standard">
+    <mat-label>Color 1</mat-label>
+    <input matInput [(ngModel)]="colorData.color1" placeholder="Red">
+  </mat-form-field>
+  
+  <mat-form-field appearance="standard">
+    <mat-label>Color 2</mat-label>
+    <input matInput [(ngModel)]="colorData.color2" placeholder="Yellow">
+  </mat-form-field>
+  
+  <mat-form-field appearance="standard">
+    <mat-label>Color 3</mat-label>
+    <input matInput [(ngModel)]="colorData.color3" placeholder="Blue">
+  </mat-form-field>
+  
+  <button mat-raised-button color="primary" (click)="colorInput()">Search</button>
+  
+</mat-card>
