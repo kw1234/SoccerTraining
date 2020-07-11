@@ -15,8 +15,10 @@ export class ColorInputComponent {
 	   color3: ''
        }
 
+       selectedColor = "red";
+
        colorInput() {
-           //console.log(this.colorData);
            this.colorService.getColors(this.colorData);
+	   //console.log(this.selectedColor);
        }
 }

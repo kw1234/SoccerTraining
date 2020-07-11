@@ -8,11 +8,11 @@ app.use(bodyParser.json());
 
 var router = express.Router();
 
-/*router.get('/', function(req, res, next) {
+router.get('/', function(req, res, next) {
 	res.send("momo");
     });
 
-    app.use('/', router);*/
+app.use('/', router);
 //app.use(express.static('frontend'));
 
 app.use((req, res, next) => {

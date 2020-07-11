@@ -11,22 +11,26 @@ export class ColorService {
 
     private colorSubject = new Subject();
 
-    text = this.colorSubject.asObservable();
+    color = this.colorSubject.asObservable();
 
     constructor(private http: Http) {}
 
     BASE_URL = 'http://localhost:8080/api';
 
     getColors(colorData) {
-        console.log(colorData);
+        //console.log(colorData);
         this.http.post(this.BASE_URL+'/postColors', colorData).subscribe(response => {
                console.log(response);
+	       //console.log(JSON.stringify(response._body));
                //this.textStore = [response.json()];
                //this.textSubject.next(this.textStore);
+	       this.colorStore = [response.json()];
+	       console.log(this.colorStore);
+	       this.colorSubject.next(this.colorStore);
+	       //console.log(this.color);
            }, error => {
               console.log(`unable to get colors with error: ${error}`);
            });
-
     }
 
 }

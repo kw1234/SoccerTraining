@@ -1,10 +1,3 @@
-<br>
-<input>
-<input>
-<input>
-
-<br>
-
 <mat-card>
   <mat-form-field appearance="standard">
     <mat-label>Color 1</mat-label>
@@ -21,6 +14,14 @@
     <input matInput [(ngModel)]="colorData.color3" placeholder="Blue">
   </mat-form-field>
   
-  <button mat-raised-button color="primary" (click)="colorInput()">Search</button>
+  <button mat-raised-button color="primary" (click)="colorInput()">Get Colors</button>
   
 </mat-card>
+
+<!--<div style="background-color: {{selectedColor}} ; padding: 300px; border: 1px solid green;">-->
+
+<div *ngFor="let color of colorService.color | async">
+  {{color.color}}
+  <div style="background-color: {{color.color}} ; padding: 300px; border: 1px solid green;">
+
+</div>
