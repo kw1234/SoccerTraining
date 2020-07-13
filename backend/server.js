@@ -9,11 +9,11 @@ app.use(bodyParser.json());
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-	res.send("momo");
+        next();
     });
 
 app.use('/', router);
-//app.use(express.static('frontend'));
+app.use(express.static('frontend'));
 
 app.use((req, res, next) => {
         res.header("Access-Control-Allow-Origin", "*");
@@ -29,8 +29,6 @@ app.get('/', function(req, res) {
 var api = express.Router();
 
 api.post('/postColors', colorService.postColors);
-
-//api.post('/highlight/:word', urlService.highlight);
 
 app.use('/api', api);
 
