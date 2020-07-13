@@ -15,7 +15,7 @@ export class ColorService {
 
     constructor(private http: Http) {}
 
-    BASE_URL = 'http://localhost:8080/api';
+    BASE_URL = 'https://randomcolor.wl.r.appspot.com/api';
 
     getColors(colorData) {
         //console.log(colorData);
