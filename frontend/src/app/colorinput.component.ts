@@ -17,8 +17,16 @@ export class ColorInputComponent {
 
        selectedColor = "red";
 
-       colorInput() {
-           this.colorService.getColors(this.colorData);
+       async colorInput() {
+           while(true) {
+	       await this.delay(1000);
+               this.colorService.getColors(this.colorData);
+           }	       
 	   //console.log(this.selectedColor);
+       }
+
+       private delay(ms: number)
+       {
+           return new Promise(resolve => setTimeout(resolve, ms));
        }
 }
